@@ -334,6 +334,7 @@
       white-space: nowrap;
       /* CSS animation moves the element one full copy-width to the left,
          then snaps back — the second copy fills the gap, creating a loop */
+      width: max-content;        /* ← lets the container measure its true full width */
       animation: marqueeScroll 28s linear infinite;
     }
     .marquee__inner span {
@@ -355,7 +356,7 @@
 
     @keyframes marqueeScroll {
       0%   { transform: translateX(0); }
-      100% { transform: translateX(-50%); } /* Move left by exactly 1 copy */
+      100% { transform: translateX(-25%); }   /* ← was -50%, now -25% for 4 copies */
     }
 
 
@@ -1407,12 +1408,14 @@
     <!-- ── MARQUEE TICKER 2 (inverted) ──────────────────────
          Dark-background version — sits just above the footer.
     ──────────────────────────────────────────────────────── -->
-    <div class="marquee marquee--inv">
-      <div class="marquee__inner">
-        <span>Available for Bookings <em>✦</em> your@email.com <em>✦</em> Vancouver &amp; Beyond <em>✦</em> Art <em>✦</em> Events <em>✦</em> Personal <em>✦</em>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
-        <span>Available for Bookings <em>✦</em> your@email.com <em>✦</em> Vancouver &amp; Beyond <em>✦</em> Art <em>✦</em> Events <em>✦</em> Personal <em>✦</em>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
-      </div>
-    </div>
+
+  <!-- AFTER (4 copies — guarantees no gap on any screen width) -->
+  <div class="marquee__inner">
+    <span>Art Photography <em>✦</em> Event Photography ...</span>
+    <span>Art Photography <em>✦</em> Event Photography ...</span>
+    <span>Art Photography <em>✦</em> Event Photography ...</span>
+    <span>Art Photography <em>✦</em> Event Photography ...</span>
+  </div>
 
   </section><!-- /home -->
 

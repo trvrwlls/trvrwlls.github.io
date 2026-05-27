@@ -478,7 +478,7 @@
     .tiles {
       display: grid;
       /* Four equal columns — one per portfolio category */
-      grid-template-columns: 1.4fr 1fr 1fr 1fr;
+      grid-template-columns: repeat(4, 1fr);
       gap: 3px;
       background: #111; /* gap color */
     }
@@ -1341,7 +1341,7 @@
 
       <div class="tile" data-page="portfolio" data-tab="events">
         
-        <div class="tile__bg" PHOTO: style="background-image: url('EventPhotography.webp')" ></div>
+        <div class="tile__bg" style="background-image: url('EventPhotography.webp')"></div>
         <span class="tile__index">02 / Event Photography</span>
         <div class="tile__overlay">
           <div class="tile__name">Event<br>Photography</div>
@@ -1364,7 +1364,7 @@
         <div class="tile__bg" style="background-image: url('ProductPhotography.webp')"></div>
         <span class="tile__index">04 / Product</span>
         <div class="tile__overlay">
-          <div class="tile__name">Product</div>
+          <div class="tile__name">Product<br>Photography</div>
           <div class="tile__cta">View Series →</div>
         </div>
       </div>
@@ -1726,12 +1726,11 @@
               about-img-secondary:  a second image (landscape, gear, BTS, etc.)
             -->
             <div class="about-img-main"
-                 style="background-color: #C8C8C6;">
-              <!-- background-image: url('about-main.jpg') -->
+              style = "background-image: url('aboutPhoto1.webp')">
+
             </div>
-            <div class="about-img-secondary"
-                 style="background-color: #AFAFAD;">
-              <!-- background-image: url('about-secondary.jpg') -->
+            <div class="about-img-secondary" 
+              style = "background-image: url('aboutPhoto2.webp')">
             </div>
           </div>
 
